@@ -4,87 +4,185 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Arsalan - Portfolio</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: #f4f7fb; color: #333; }
+    
     header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 2rem;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      color: white;
       text-align: center;
+      padding: 4rem 2rem 6rem;
+      position: relative;
     }
-    header h1 {
-      margin: 0;
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1.5s ease;
     }
+    header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; animation: fadeInUp 1.5s ease; }
+    header p { font-size: 1.2rem; animation: fadeInUp 2s ease; }
+
     nav {
-      margin-top: 1rem;
+      background: #2c3e50;
+      padding: 0.8rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
-      color: #fff;
-      margin: 0 10px;
+      color: white;
       text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
     }
+    nav a:hover { color: #f1c40f; }
+
     section {
-      padding: 2rem;
-      max-width: 900px;
+      padding: 3rem 2rem;
+      max-width: 1100px;
       margin: auto;
+      animation: fadeIn 2s ease;
     }
     h2 {
-      border-bottom: 2px solid #2c3e50;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #2c3e50;
+      position: relative;
     }
-    .skills, .experience {
+    h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #3498db;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    .skills, .experience, .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+      gap: 1.5rem;
     }
     .card {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
     footer {
+      background: #2c3e50;
+      color: white;
       text-align: center;
       padding: 1rem;
-      background: #2c3e50;
-      color: #fff;
       margin-top: 2rem;
     }
+
+    /* Floating Buttons */
+    .float-btn {
+      position: fixed;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      z-index: 9999;
+    }
+    .float-btn:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    }
+
+    .cv-btn { bottom: 20px; right: 20px; background: #f1c40f; animation: glow 2s infinite ease-in-out; color:#2c3e50; }
+    .whatsapp-btn { bottom: 20px; left: 20px; background: #25D366; animation: pulse 2s infinite; }
+    .email-btn { bottom: 20px; left: 50%; transform: translateX(-50%); background: #e74c3c; animation: bounce 2s infinite; }
+
+    /* Animations */
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px rgba(241, 196, 15, 0.7); }
+      50% { box-shadow: 0 0 25px rgba(241, 196, 15, 1); }
+      100% { box-shadow: 0 0 10px rgba(241, 196, 15, 0.7); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    /* Section animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
   <header>
+    <!-- Replace profile.jpg with your photo -->
+    <img src="profile.jpg" alt="Muhammad Arsalan">
     <h1>Muhammad Arsalan</h1>
-    <p>Customer Support | Communication | Problem Solving</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p>Customer Support Specialist | Communication | Problem Solver</p>
   </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I am an experienced customer support professional with a strong background in handling client queries, problem solving, and providing excellent service. 
-      Skilled in communication and adaptability, I enjoy helping businesses build strong customer relationships.
+      I am a customer support professional with experience in handling clients, 
+      providing quick resolutions, and ensuring customer satisfaction. 
+      I enjoy solving problems and improving the customer experience through strong communication.
     </p>
   </section>
 
   <section id="skills">
-    <h2>Top Skills</h2>
+    <h2>Skills</h2>
     <div class="skills">
       <div class="card">Customer Support</div>
       <div class="card">Communication</div>
       <div class="card">Problem Solving</div>
+      <div class="card">Team Collaboration</div>
     </div>
   </section>
 
@@ -110,14 +208,41 @@
     </div>
   </section>
 
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Customer Feedback Tracker</h3>
+        <p>Designed a system to track and analyze customer complaints and resolutions.</p>
+      </div>
+      <div class="card">
+        <h3>Support Knowledge Base</h3>
+        <p>Created knowledge articles that improved resolution speed by 25%.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
-    <p>📧 muhammadarsalan161103@gmail.com</p>
-    <p>📱 0312-5989442</p>
+    <p>Email: <strong>muhammadarsalan161103@gmail.com</strong></p>
+    <p>Phone: <strong>0312-5989442</strong></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Muhammad Arsalan</p>
+    <p>&copy; 2025 Muhammad Arsalan | Built with ❤️</p>
   </footer>
+
+  <!-- Floating Buttons -->
+  <a href="cv.pdf" download class="float-btn cv-btn" title="Download CV">
+    <i class="fa-solid fa-file-arrow-down"></i>
+  </a>
+
+  <a href="https://wa.me/923125989442" target="_blank" class="float-btn whatsapp-btn" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <a href="mailto:muhammadarsalan161103@gmail.com" class="float-btn email-btn" title="Send Email">
+    <i class="fa-solid fa-envelope"></i>
+  </a>
 </body>
 </html>
