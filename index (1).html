@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhammad Arsalan — Portfolio</title>
+  <meta name="description" content="Portfolio of Muhammad Arsalan — Customer Support Specialist with problem-solving, communication, and adaptability skills." />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.10/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(10px); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 glass border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold text-gray-900">Muhammad Arsalan</a>
+      <nav class="hidden sm:flex gap-6 text-sm font-medium">
+        <a href="#about" class="hover:text-gray-900">About</a>
+        <a href="#skills" class="hover:text-gray-900">Skills</a>
+        <a href="#experience" class="hover:text-gray-900">Experience</a>
+        <a href="#contact" class="hover:text-gray-900">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-indigo-100 via-sky-100 to-teal-100">
+    <div class="max-w-6xl mx-auto px-4 py-20 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Customer Support Specialist</h1>
+      <p class="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">Problem-solver • Clear Communicator • Adaptable</p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="#contact" class="px-6 py-3 rounded-xl bg-gray-900 text-white font-semibold hover:bg-gray-800">Hire Me</a>
+        <a href="cv.pdf" class="px-6 py-3 rounded-xl bg-white border border-gray-300 text-gray-900 font-semibold hover:bg-gray-100">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold mb-4">About Me</h2>
+    <p class="text-gray-700 leading-relaxed">I’m Muhammad Arsalan, a dedicated Customer Support Specialist based in Lahore, Pakistan. I have experience working with companies like FedEx (ibex Lahore), Talabat, Apex, and Taptap Send. I excel in ensuring customer satisfaction by providing clear communication, quick solutions, and empathetic support.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-white border-t border-b border-gray-200 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6">Skills</h2>
+      <div class="grid md:grid-cols-2 gap-6 text-gray-700">
+        <ul class="list-disc list-inside space-y-2">
+          <li>Excellent Communication & Listening</li>
+          <li>Problem-Solving under pressure</li>
+          <li>Adaptability in fast-paced environments</li>
+        </ul>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Conflict resolution & empathy</li>
+          <li>CRM tools & support systems</li>
+          <li>Team collaboration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold mb-6">Experience</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="text-lg font-semibold">Customer Experience Representative — FedEx @ ibex Lahore</h3>
+        <p class="text-gray-600">Provided responsive customer support, handled queries efficiently, and maintained high customer satisfaction.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Support Agent — Talabat</h3>
+        <p class="text-gray-600">Managed food delivery customer concerns, resolved issues, and ensured smooth service.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Customer Service Representative — Apex</h3>
+        <p class="text-gray-600">Handled client communication, problem-solving, and escalations effectively.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Support Specialist — Taptap Send</h3>
+        <p class="text-gray-600">Assisted customers with transaction and account-related issues while ensuring a positive experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-gray-100 border-t border-gray-200 py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+      <p class="text-gray-700 mb-6">Feel free to reach out via email or WhatsApp.</p>
+      <p class="text-gray-900 font-semibold">📧 Email: <a href="mailto:muhammadarsalan161103@gmail.com" class="text-indigo-600 hover:underline">muhammadarsalan161103@gmail.com</a></p>
+      <p class="text-gray-900 font-semibold mt-2">📱 WhatsApp: <a href="https://wa.me/923125989442" class="text-indigo-600 hover:underline">0312-5989442</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 py-6 text-center text-sm text-gray-600">
+    <p>© <span id="year"></span> Muhammad Arsalan. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
